@@ -1,0 +1,1 @@
+export const WEBSITE_NAME = "玖捌网"

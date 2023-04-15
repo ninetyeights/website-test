@@ -1,90 +1,350 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+'use client'
+import { _nav } from '@/constants/nav'
+import { useAppContext } from '@/lib/context'
+import Link from 'next/link'
 
-const inter = Inter({ subsets: ['latin'] })
+const colors = [
+  'bg-purple-400/90 dark:bg-purple-900/30',
+  'bg-orange-400/90 dark:bg-orange-900/30',
+  'bg-cyan-500/90 dark:bg-cyan-900/30',
+  'bg-rose-400/90 dark:bg-rose-900/30',
+  'bg-green-500/90 dark:bg-green-900/30',
+  'bg-pink-500/90 dark:bg-pink-900/30',
+]
 
 export default function Home() {
+  const { isWide } = useAppContext()
+  console.log(isWide)
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main
+      className={`container mt-6 space-y-4${isWide ? '' : ' lg:max-w-4xl'}`}
+    >
+      <div
+        className={`grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 ${
+          isWide ? 'lg:grid-cols-4 xl:grid-cols-5' : ''
+        } gap-4`}
+      >
+        {_nav.map((item, index) => (
+          <Link
+            key={index}
+            href={item.link}
+            style={{
+              transition: 'transform .4s cubic-bezier(0.34, 2.60, 0.64, 1)',
+            }}
+            className={`${colors[index]} group home__card text-white block h-36 rounded-lg p-4 shadow-lg space-y-1`}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+            <div className="flex items-center justify-between">
+              <h4 className="text-xl">{item.name}</h4>
+              {/* {item.icon} */}
+            </div>
+            <p className="text-sm">{item.description}</p>
+          </Link>
+        ))}
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
+        <p>
+          aoisdjfpoaidjf opahd fjapodf haiosdfjopaidjfpoasjdfp oajpdfiajsdpo{' '}
+        </p>
       </div>
     </main>
   )
