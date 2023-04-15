@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
+    "@netlify/plugin-nextjs": "^4.34.0",
     "@types/node": "18.15.2",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
